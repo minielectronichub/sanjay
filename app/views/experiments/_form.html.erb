@@ -1,0 +1,6 @@
+<%= simple_form_for @experiment do |f| %>
+  <%= f.input :title, label: "Experiment title" %>
+  <%= f.input :description, label: "Add content for the experiment" %>
+  <%= f.input :components ,label: "components used" %>
+  <%= f.button :submit %>
+<% end %>

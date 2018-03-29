@@ -1,0 +1,4 @@
+
+<% @experiments.each do |experiment| %>
+ <h3><%= link_to experiment.title, experiment_path(experiment) %></h3>
+<% end %>

@@ -1,0 +1,10 @@
+<h1><%= @experiment.title .html_safe %></h1>
+<p><%= @experiment.description .html_safe %></p>
+<p><%= @experiment.components %></p>
+<%= link_to "Back", root_path %>
+<% if user_signed_in? %>
+<% if @experiment.user_id == current_user.id %>
+<%= link_to "Edit", edit_experiment_path(@experiment) %>
+<%= link_to "Delete", experiment_path(@experiment), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+<% end %>
