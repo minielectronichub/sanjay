@@ -4,7 +4,7 @@ class LabsController < ApplicationController
 	end	
 
 	def new 
-     @lab = current_user.labs.build
+    
 	end 
 
 	def create 
@@ -12,6 +12,6 @@ class LabsController < ApplicationController
 	
 	private 
 	def lab_params
-		params.require(:experiment).permit(:title)		
+		
 	end
 end
