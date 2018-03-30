@@ -85,6 +85,10 @@ header .contact {
   color: #111;
   font-weight: 600px;
  }
+
+ .notice .alert {
+   text-align: center;
+ }
  
  
 
