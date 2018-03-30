@@ -28,6 +28,9 @@ a {
 a:hover {
   color: #cc6f6f;
 }
+p {
+  text-align: center !important;
+}
 
 body {
   padding-top: 0px;
