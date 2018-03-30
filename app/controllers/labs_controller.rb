@@ -5,8 +5,6 @@ class LabsController < ApplicationController
 
 	def new 
      @lab = current_user.labs.build
-     @experiment = current_user.experiments.build(experiment_params)
-	 @experiment.lab_id = params[:lab_id]
 	end 
 
 	def create 
