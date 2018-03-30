@@ -35,6 +35,7 @@ class ExperimentsController < ApplicationController
 	end
 
 	def update
+		   @experiment.lab_id = params[:lab_id]
 		if @experiment.update(experiment_params)
 		   redirect_to experiment_path(@experiment)
 		else

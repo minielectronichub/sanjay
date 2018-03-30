@@ -1,3 +1,9 @@
-<h1>Edit experiment</h1>
+<h1>Edit your experiment</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @experiment do |f| %>
+  <%= select_tag(:lab_id, @categories %>
+  <%= f.input :title, label: "Experiment title" %>
+  <%= f.input :description, label: "Add content for the experiment" %>
+  <%= f.input :components ,label: "components used" %>
+  <%= f.button :submit %>
+<% end %>
