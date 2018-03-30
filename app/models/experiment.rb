@@ -1,6 +1,6 @@
 class Experiment < ApplicationRecord
 	belongs_to :user
-
+    belongs_to :lab
   #scope :searched_experiments -> where("title LIKE ?", "%#{params[:title]}%")
 
 end

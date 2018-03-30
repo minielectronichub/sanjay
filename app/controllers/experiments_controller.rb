@@ -17,10 +17,12 @@ class ExperimentsController < ApplicationController
 
 	def new 
     @experiment = current_user.experiments.build
+    @labs = Lab.all.map{ |c| [c.name, c.id] }
 	end 
 
 	def create 
 	   @experiment = current_user.experiments.build(experiment_params)
+	   @experiment.lab_id = params[:lab_id]
        if @experiment.save
          redirect_to root_path
        else
