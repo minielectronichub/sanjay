@@ -36,7 +36,7 @@ class ExperimentsController < ApplicationController
 
 	def update
 		if @experiment.update(experiment_params)
-			redirect_to experiment_path(@experiment)
+		   redirect_to experiment_path(@experiment)
 		else
 			render 'edit'
 		end
@@ -49,10 +49,11 @@ class ExperimentsController < ApplicationController
 	
 	private 
 	def experiment_params
-		params.require(:experiment).permit(:title, :description, :components)		
+		params.require(:experiment).permit(:title, :description, :components, :lab_id)		
 	end
 	def find_experiment
 	 @experiment = Experiment.find(params[:id])
 	end
 
 end
+
