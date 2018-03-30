@@ -42,8 +42,8 @@ header {
 
 header .logo {
   font-family: sans-serif;
-  font-size: 20px;
-    color: #111;
+  font-size: 40px;
+  color: #111;
   font-weight: 900px;
   text-transform: uppercase;
   display: block;
@@ -71,7 +71,7 @@ header nav ul li a{
   font-size: 16px;
   color: #111;
   font-weight: 600px;
-  padding: 0px 16px;
+  padding: 0px 16px 0px 70px;
   text-transform: uppercase;
 }
  
