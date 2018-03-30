@@ -17,7 +17,7 @@ class ExperimentsController < ApplicationController
 
 	def new 
     @experiment = current_user.experiments.build
-    @labs = Lab.all.map{ |c| [c.name, c.id] }
+    @labs = Lab.all.map{ |c| [c.title, c.id] }
 	end 
 
 	def create 
