@@ -1,8 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Form With Labels On Top</title>
+
+   <!-- <link rel="stylesheet" href="assets/demo.css"> -->
+	<link rel="stylesheet" href="assets/form-labels-on-top.css">
+
+</head>
 
 
 
-<%= simple_form_for @experiment do |f| %>
-  <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
+    <div class="main-content">
+      <form class="form-labels-on-top" method="post" action="#">
+            <div class="form-title-row">
+                <h1>Form Example</h1>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Full name</span>
+                    <input type="text" name="name">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Dropdown</span>
+                    <select name="dropdown">
+                        <option>Option One</option>
+                        <option>Option Two</option>
+                        <option>Option Three</option>
+                        <option>Option Four</option>
+                    </select>
+                </label>
+            </div>       
+             <div class="form-row">
+                <button type="submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<%= simple_form_for @experiment, :class => "form-labels-on-top", do |f| %>
+  <%= select_tag(:collage_id, options_for_select(@collages), :class => "form-row", :prompt => "Select a collage") %>
   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
   
@@ -11,3 +62,5 @@
   <%= f.input :components ,label: "components used" %>
   <%= f.button :submit %>
 <% end %>
+
+
