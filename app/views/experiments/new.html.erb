@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/form-labels-on-top.css">
-<style type="text/css">
+    <style type="text/css">
 	html{
     background-color: #f3f3f3;
 }
@@ -124,6 +124,19 @@
 
 <div class="main-content">
 <%= render 'form' %>
+
+   <%= simple_form_for @experiment, defaults: { input_html: { class: 'form-labels-on-top' } } do |f| %>
+   <%= select_tag(:collage_id, options_for_select(@collages), :class => "form-row", :prompt => "Select a collage") %>
+   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
+   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
+  
+   <%= f.input :title,  input_html: { class: 'form-row' }, label: "Experiment title" %>
+   <%= f.input :description,  input_html: { class: 'form-row' }, label: "Add content for the experiment" %>
+   <%= f.input :components,  input_html: { class: 'form-row' }, label: "components used" %>
+   <%= f.button :submit %>
+   <% end %>
+
+
 </div>
 </body>
 </html>
