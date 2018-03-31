@@ -1,0 +1,2 @@
+class Collage < ApplicationRecord
+end
