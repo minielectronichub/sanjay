@@ -1,12 +1,12 @@
 
-   <%= simple_form_for @experiment, defaults: { input_html: { class: 'sanjay' } } do |f| %>
+   <%= simple_form_for @experiment, input_html: { class: 'sanjay' }  do |f| %>
    <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
    <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
    <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
   
-   <%= f.input :title,  input_html: { class: 'sai' }, label: "Experiment title" %>
-   <%= f.input :description,  input_html: { class: 'sai' }, label: "Add content for the experiment" %>
-   <%= f.input :components,  input_html: { class: 'sai' }, label: "components used" %>
+   <%= f.input :title,  input_html: { class: 'ssnjay' }, label: "Experiment title" %>
+   <%= f.input :description,  input_html: { class: 'sanjay' }, label: "Add content for the experiment" %>
+   <%= f.input :components,  input_html: { class: 'sanjay' }, label: "components used" %>
    <%= f.button :submit %>
    <% end %>
 
