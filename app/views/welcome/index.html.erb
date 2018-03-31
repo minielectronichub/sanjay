@@ -161,8 +161,8 @@ input[type="search"] {
                     <select name="dropdown">
                         <ul class="dropdown-menu" role="menu">
                            <% Lab.all.each do |lab| %>
-                           <li class="<%= 'active' if params[:lab] == lab.name %>">
-                           <%= link_to lab.name, experiments_path(lab: lab.name), class: "link" %>
+                           <%= 'active' if params[:lab] == lab.title %>">
+                           <%= link_to lab.title, experiments_path(lab: lab.title), class: "link" %>
                            </li>
                        <% end %>
                       </ul>
