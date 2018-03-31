@@ -1,18 +1,14 @@
-   
-   <%= simple_form_for @experiment, do |f| %>
-   <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
-   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
-   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
-   
-   <%= f.input :title, label: "Experiment title" %>
+
+
+
+
+<%= simple_form_for @experiment do |f| %>
+  <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
+  <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
+  <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
   
-   <%= f.input :description, label: "Add content for the experiment" %>
-   
-   <%= f.input :components, label: "components used" %>
-   
-   <%= f.button :submit %>
-   <% end %>
-   
-
-
-
+  <%= f.input :title, label: "Experiment title" %>
+  <%= f.input :description, label: "Add content for the experiment" %>
+  <%= f.input :components ,label: "components used" %>
+  <%= f.button :submit %>
+<% end %>
