@@ -6,13 +6,13 @@
   <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
-  <div class="form-row">
+  <div class="form-labels-on-top">
   <%= f.input :title, label: "Experiment title" %>
 </div>
-<div class="form-row">
+<div class="form-labels-on-top">
   <%= f.input :description, label: "Add content for the experiment" %>
 </div>
-<div class="form-row">
+<div class="form-labels-on-top">
   <%= f.input :components ,label: "components used" %>
 </div>
   <%= f.button :submit %>
