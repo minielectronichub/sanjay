@@ -154,6 +154,21 @@ input[type="search"] {
     <%= submit_tag 'submit' %>
     <% end %>
   </div>
+
+  <div class="form-row">
+                <label>
+                    <span>Dropdown</span>
+                    <select name="dropdown">
+                        <ul class="dropdown-menu" role="menu">
+                           <% Lab.all.each do |lab| %>
+                           <li class="<%= 'active' if params[:lab] == lab.name %>">
+                           <%= link_to lab.name, experiments_path(lab: lab.name), class: "link" %>
+                           </li>
+                       <% end %>
+                      </ul>
+                    </select>
+                </label>
+            </div>
 </section>  
 </body>
 </html>
