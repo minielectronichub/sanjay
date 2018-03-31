@@ -1,6 +1,7 @@
 <h1>Edit your experiment</h1>
 
 <%= simple_form_for @experiment do |f| %>
+  
   <%= f.select :lab_id, @labs %>
   <%= f.select :sem_id, @sems %>
   <%= f.select :collage_id, @collages %>
