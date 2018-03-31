@@ -13,13 +13,13 @@
   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
 </div>
   <div class="form-labels-on-top">
-  <%= f.input :title, label: "Experiment title" %>
+  <%= f.input :title, label: "Experiment title:" %>
 </div>
 <div class="form-labels-on-top">
-  <%= f.input :description, label: "Add content for the experiment" %>
+  <%= f.input :description, label: "Add content :", :input_html => { :rows => 7 , :style => 'width: 100%'} %>
 </div>
 <div class="form-labels-on-top">
-  <%= f.input :components ,label: "components used" %>
+  <%= f.input :components ,label: "components used:" %>
 </div>
 <div class="form-labels-on-top">
   <%= f.button :submit %>
