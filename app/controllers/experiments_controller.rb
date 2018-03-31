@@ -18,6 +18,9 @@ class ExperimentsController < ApplicationController
 	def new 
     @experiment = current_user.experiments.build
     @labs = Lab.all.map{ |c| [c.title, c.id] }
+    @sems = Sem.all.map{ |c| [c.name, c.id] }
+    @collages = Collage.all.map{ |c| [c.name, c.id] }
+    
 	end 
 
 	def create 
