@@ -1,9 +1,7 @@
 <h1>Edit your experiment</h1>
 
 <%= simple_form_for @experiment do |f| %>
-  <%= select_tag(:lab_id, @labs %>
-  <%= select_tag(:sem_id, @sems %>
-  <%= select_tag(:collage_id, @collages %>
+  
   <%= f.input :title, label: "Experiment title" %>
   <%= f.input :description, label: "Add content for the experiment" %>
   <%= f.input :components ,label: "components used" %>
