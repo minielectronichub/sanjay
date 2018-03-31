@@ -26,6 +26,8 @@ class ExperimentsController < ApplicationController
 	def create 
 	   @experiment = current_user.experiments.build(experiment_params)
 	   @experiment.lab_id = params[:lab_id]
+	   @experiment.sem_id = params[:sem_id]
+	   @experiment.collage_id = params[:collage_id]
        if @experiment.save
          redirect_to root_path
        else
@@ -38,6 +40,8 @@ class ExperimentsController < ApplicationController
 	end
 
 	def update
+		   @experiment.sem_id = params[:sem_id]
+	       @experiment.collage_id = params[:collage_id]
 		   @experiment.lab_id = params[:lab_id]
 		if @experiment.update(experiment_params)
 		   redirect_to experiment_path(@experiment)
@@ -53,7 +57,7 @@ class ExperimentsController < ApplicationController
 	
 	private 
 	def experiment_params
-		params.require(:experiment).permit(:title, :description, :components, :lab_id)		
+		params.require(:experiment).permit(:title, :description, :components, :lab_id, :sem_id, :collage_id)		
 	end
 	def find_experiment
 	 @experiment = Experiment.find(params[:id])
