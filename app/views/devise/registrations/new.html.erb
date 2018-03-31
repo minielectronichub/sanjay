@@ -260,12 +260,12 @@ label {
 
 .btn-animate {
 
-   margin-top: 39px;
+   margin-top: 15px;
    width: 229px;
    float: left;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 25px;
   text-align: center;
   color: #fff;
   padding-top: 0px;
@@ -273,7 +273,6 @@ label {
   height: 35px;
   border: none;
   border-radius: 20px;
-  
   background-color: rgb(211, 48, 108);
   left: 0px;
   top: 0px;
@@ -445,7 +444,7 @@ a.btn-goback:hover {
 }
 
 input[type="submit"] {
-	  float: left;
+  float: left;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 13px;
@@ -480,13 +479,13 @@ input[type="submit"] {
      <%= f.input :password_confirmation,:input_html => { :class => 'form-styling' }, required: true %>
   </div>
 
-  <div class="btn-signin">
+    <div class="btn-signin">
     <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
+    </div>
+   <% end %>
+     <div class="btn-animate">
     <%= render "devise/shared/links" %>
-
+    </div>  
 </div>
 </div>
 </body>
