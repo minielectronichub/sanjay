@@ -3,9 +3,15 @@
 
 
 <%= simple_form_for @experiment do |f| %>
+<div class="form-labels-on-top">
   <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
+</div>
+<div class="form-labels-on-top">
   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
+</div>
+<div class="form-labels-on-top">
   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
+</div>
   <div class="form-labels-on-top">
   <%= f.input :title, label: "Experiment title" %>
 </div>
@@ -15,5 +21,7 @@
 <div class="form-labels-on-top">
   <%= f.input :components ,label: "components used" %>
 </div>
+<div class="form-labels-on-top">
   <%= f.button :submit %>
+</div>
 <% end %>
