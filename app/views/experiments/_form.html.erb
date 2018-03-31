@@ -17,49 +17,29 @@
 
 
     <div class="main-content">
-      <form class="form-labels-on-top" method="post" action="#">
-            <div class="form-title-row">
-                <h1>Form Example</h1>
-            </div>
-            <div class="form-row">
-                <label>
-                    <span>Full name</span>
-                    <input type="text" name="name">
-                </label>
-            </div>
-            <div class="form-row">
-                <label>
-                    <span>Email</span>
-                    <input type="email" name="email">
-                </label>
-            </div>
-            <div class="form-row">
-                <label>
-                    <span>Dropdown</span>
-                    <select name="dropdown">
-                        <option>Option One</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
-                        <option>Option Four</option>
-                    </select>
-                </label>
-            </div>       
-             <div class="form-row">
-                <button type="submit">Submit Form</button>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
-
-<%= simple_form_for @experiment, :class => "form-labels-on-top", do |f| %>
+  <%= simple_form_for @experiment, defaults: { input_html: { class: 'form-labels-on-top' } } do |f| %>
   <%= select_tag(:collage_id, options_for_select(@collages), :class => "form-row", :prompt => "Select a collage") %>
   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
   <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
   
-  <%= f.input :title, label: "Experiment title" %>
-  <%= f.input :description, label: "Add content for the experiment" %>
-  <%= f.input :components ,label: "components used" %>
+  <%= f.input :title,  input_html: { class: 'form-row' }, label: "Experiment title" %>
+  <%= f.input :description,  input_html: { class: 'form-row' }, label: "Add content for the experiment" %>
+  <%= f.input :components,  input_html: { class: 'form-row' }, label: "components used" %>
+  <%= f.button :submit %>
+<% end %>
+
+    </div>
+</body>
+</html>
+
+<%= simple_form_for @experiment, defaults: { input_html: { class: 'form-labels-on-top' } } do |f| %>
+  <%= select_tag(:collage_id, options_for_select(@collages), :class => "form-row", :prompt => "Select a collage") %>
+  <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
+  <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
+  
+  <%= f.input :title,  input_html: { class: 'form-row' }, label: "Experiment title" %>
+  <%= f.input :description,  input_html: { class: 'form-row' }, label: "Add content for the experiment" %>
+  <%= f.input :components,  input_html: { class: 'form-row' }, label: "components used" %>
   <%= f.button :submit %>
 <% end %>
 
