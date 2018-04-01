@@ -160,7 +160,7 @@ input[type="search"] {
          <% Lab.all.each do |lab| %>
              <%= 'active' if params[:lab] == lab.title %>
             
-             <li><%= select_tag(:lab_id, options_for_select(@labs), :prompt => "select a lab"), link_to lab.title, experiments_path(lab: lab.title)  %></li> 
+             <li><%= collection_select(link_to lab.title, experiments_path(lab: lab.title)) %></li> 
             <% end %>
           </ul>
         </div>
