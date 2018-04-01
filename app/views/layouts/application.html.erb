@@ -33,7 +33,26 @@
       <% end %>        
     </nav>
   </header>
-    
+   
+
+
+  
+            <div class="form-row">
+                <label>
+                    <span>Dropdown</span>
+                    <select name="dropdown">
+                         <ul class="dropdown-menu" role="menu">
+                           <% Lab.all.each do |lab| %>
+                           <%= 'active' if params[:lab] == lab.title %>">
+                            <li><%= link_to lab.title, experiments_path(lab: lab.title) %></li>   
+                        <% end %>
+                      </ul>
+                    </select>
+                </label>
+            </div>
+
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
   <%= yield %>
