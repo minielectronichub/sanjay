@@ -1,4 +1,8 @@
 <h1 class="current-lab"><%= params[:lab] %></h1>
-<% @experiments.each do |experiment| %>
- <h3><%= link_to experiment.title, experiment_path(experiment) %></h3>
+<% if @experiments.count == 0 %>
+	<h1>There are no experiments currently in this Lab</h1>
+<% else %>
+   <% @experiments.each do |experiment| %>
+   <h3><%= link_to experiment.title, experiment_path(experiment) %></h3>
+<% end %>
 <% end %>
