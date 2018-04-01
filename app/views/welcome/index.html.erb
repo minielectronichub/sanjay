@@ -161,7 +161,7 @@ input[type="search"] {
      
        <div class="form-labels-on-top">
          <% Lab.all.each do |lab| %>
-            <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select the lab") %>
+          
               <%= 'active' if params[:lab] == lab.title %>
              <li><%= link_to lab.title, experiments_path(lab: lab.title), class: "link" %></li> 
             <% end %>
