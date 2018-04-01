@@ -6,7 +6,7 @@ class ExperimentsController < ApplicationController
     @experiments = Experiment.all.order("created_at DESC")
     else
 	 @lab_id = Lab.find_by(title: params[:lab]).id
-	 @experiments = Experiment.where(:experiment_id => @lab_id).order("created_at DESC")
+	 @experiments = Experiment.where(:lab_id => @lab_id).order("created_at DESC")
 	end
 	end
 
