@@ -1,4 +1,4 @@
-
+<h1 class="current-lab"><%= params[:lab] %></h1>
 <% @experiments.each do |experiment| %>
  <h3><%= link_to experiment.title, experiment_path(experiment) %></h3>
 <% end %>
