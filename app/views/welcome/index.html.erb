@@ -155,14 +155,10 @@ input[type="search"] {
     <% end %>
   </div>
 
-<div class="form-labels-on-top">
-  <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
-</div>
      
        <div class="form-labels-on-top">
          <% Lab.all.each do |lab| %>
-          
-              <%= 'active' if params[:lab] == lab.title %>
+             <%= 'active' if params[:lab] == lab.title %>
              <li><%= link_to lab.title, experiments_path(lab: lab.title), class: "link" %></li> 
             <% end %>
           </ul>
