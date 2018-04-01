@@ -19,6 +19,7 @@
 * {
   text-decoration: none;
   font-family: "Verdana";
+  list-style: none;
 }
 
 a {
@@ -81,6 +82,11 @@ header nav ul li a{
 header .contact {
   display: block;
   float: right;
+  list-style: none;
+  font-size: 16px;
+  color: #111;
+  font-weight: 800px;
+  text-transform: uppercase;
 }
 
 .contact a{
