@@ -44,7 +44,7 @@ class ExperimentsController < ApplicationController
 
 	def edit
 	 @labs = Lab.all.map{ |c| [c.title, c.id] }
-	 @branches = Branch.all.map{ |c| [c.title, c.id] }
+	 @branches = Branch.all.map{ |c| [c.name, c.id] }
      @sems = Sem.all.map{ |c| [c.name, c.id] }
      @collages = Collage.all.map{ |c| [c.name, c.id] }
 	end
