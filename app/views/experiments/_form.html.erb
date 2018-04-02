@@ -4,16 +4,16 @@
 
 <%= simple_form_for @experiment do |f| %>
 <div class="form-labels-on-top">
-  <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
+  <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select your collage") %>
 </div>
 <div class="form-labels-on-top">
-  <%= select_tag(:branch_id, options_for_select(@branches), :prompt => "Select a branch") %>
+  <%= select_tag(:branch_id, options_for_select(@branches), :prompt => "Select your branch") %>
 </div>
 <div class="form-labels-on-top">
-  <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
+  <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select your sem") %>
 </div>
 <div class="form-labels-on-top">
-  <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select a lab") %>
+  <%= select_tag(:lab_id, options_for_select(@labs), :prompt => "Select your lab") %>
 </div>
   <div class="form-labels-on-top">
   <%= f.input :title, label: "Experiment title:" %>
