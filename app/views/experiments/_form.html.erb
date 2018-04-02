@@ -7,6 +7,9 @@
   <%= select_tag(:collage_id, options_for_select(@collages), :prompt => "Select a collage") %>
 </div>
 <div class="form-labels-on-top">
+  <%= select_tag(:branch_id, options_for_select(@branches), :prompt => "Select a branch") %>
+</div>
+<div class="form-labels-on-top">
   <%= select_tag(:sem_id, options_for_select(@sems), :prompt => "Select a sem") %>
 </div>
 <div class="form-labels-on-top">
