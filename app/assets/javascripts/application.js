@@ -13,6 +13,6 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require froala_editor.min.js
+
 //= require trix
 //= require_tree .
