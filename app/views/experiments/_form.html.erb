@@ -1,6 +1,5 @@
 
 
-<h1>sanjay</h1>
 
 <%= simple_form_for @experiment do |f| %>
 <div class="form-labels-on-top">
@@ -20,6 +19,7 @@
 </div>
 <div class="form-labels-on-top">
   <%= f.input :description, label: "Add content :", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
+  <trix-editor input="experiment_description"></trix-editor>
 </div>
 <div class="form-labels-on-top">
   <%= f.input :components ,label: "components used:", :input_html => { :rows => 7 , :style => 'width: 98%'} %>

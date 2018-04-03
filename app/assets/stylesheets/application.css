@@ -1,4 +1,6 @@
+//*= require trix
 /*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -15,6 +17,10 @@
  */
  // @import "bootstrap-sprockets";
  // @import "bootstrap";
+    @import "froala_editor.min.css";
+    @import "froala_style.min.css";
+    @import "font-awesome-sprockets";
+    @import "font-awesome";
 
 * {
   text-decoration: none;
