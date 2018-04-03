@@ -18,7 +18,7 @@
   <%= f.input :title, label: "Experiment title:" %>
 </div>
 <div class="form-labels-on-top">
-  <%= f.input :description, label: "Add content :", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
+  <%= f.hidden_field :description, label: "Add content :", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
   <trix-editor input="experiment_description"></trix-editor>
 </div>
 <div class="form-labels-on-top">
