@@ -20,6 +20,7 @@
 <div class="form-labels-on-top">
   <%= f.hidden_field :description, label: "Add content :", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
   <trix-editor input="description"></trix-editor>
+  <%= f.trix_editor :description %>
 </div>
 <div class="form-labels-on-top">
   <%= f.input :components ,label: "components used:", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
