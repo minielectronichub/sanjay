@@ -26,6 +26,11 @@
   <%= f.input :components ,label: "components used:", :input_html => { :rows => 7 , :style => 'width: 98%'} %>
 </div>
 <div class="form-labels-on-top">
+<%= label_tag(:url, “Enter youtube url”) %>
+<%= text_field_tag(:url) %>
+</div>
+<% end %>
+<div class="form-labels-on-top">
   <%= f.button :submit %>
 </div>
 <% end %>
