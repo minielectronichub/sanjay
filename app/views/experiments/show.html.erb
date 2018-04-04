@@ -4,9 +4,7 @@
 <p><%= @experiment.lab.title %></p>
 <iframe id="ytplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/TEros_6H38Y?autoplay=1&origin=http://example.com" frameborder="0"></iframe>
 <embed src=”<%=@embed_video[‘item_b_youtube’]%>” width=”375″ height=”225″ />
-config/routes.rb
-root :to => “experiment#index”
-match “show” => “experiment#show”,:as => :video
+
 
 
 <%= link_to "Back", root_path %>
