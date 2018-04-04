@@ -70,7 +70,7 @@ class ExperimentsController < ApplicationController
 	
 	private 
 	def experiment_params
-		params.require(:experiment).permit(:title, :description, :components, :lab_id, :sem_id, :collage_id, :branch_id)		
+		params.require(:experiment).permit(:title, :description, :components, :youtube, :lab_id, :sem_id, :collage_id, :branch_id)		
 	end
 	def find_experiment
 	 @experiment = Experiment.find(params[:id])
