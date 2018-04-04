@@ -1,7 +1,9 @@
 class ExperimentsController < ApplicationController
+  require ‘youtube_g’
   before_action :find_experiment, only: [:show, :edit, :update, :destroy]
 
  	def index
+ 		render
     if params[:lab].blank?
         @experiments = Experiment.all.order("created_at DESC")
      else
@@ -17,7 +19,11 @@ class ExperimentsController < ApplicationController
   end
 
   def show 
-
+     url=params[:url]
+    @embed_video={}
+    client=YouTubeG::Client.new
+    video=client.video_by(url.scan(/v=(.*)[&|?]*/).to_s.split(‘&’)[0]) rescue nil
+    @embed_video[“video”]=video ? video.embed_url : nil
   end
 
 	def new 
@@ -73,6 +79,5 @@ class ExperimentsController < ApplicationController
 	def find_experiment
 	 @experiment = Experiment.find(params[:id])
 	end
-
 end
 
