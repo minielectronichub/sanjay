@@ -147,7 +147,8 @@ input[type="search"] {
 }
 </style>
 <body>
-<section class="main">  
+  <% if user_signed_in? %>
+  <section class="main">  
  <div class="cover">
     <%= form_tag search_path, method: :get, class: "flex-form" do %>
     <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
@@ -166,7 +167,7 @@ input[type="search"] {
           </ul>
         </div>
        
-
+<% end %>
           
 </section>  
 </body>
