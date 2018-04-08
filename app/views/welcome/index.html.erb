@@ -178,6 +178,42 @@ input[type="search"] {
 
 
 
+<script>
+
+  $(document).ready(function() {
+    $('#title').on('keyup', function() {
+      $('ul#experiments-container').hide();
+      $('ul#experiments-container').html('');
+      $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/",
+        data: "query=" + $('#title').val(),
+        success: function(response) {
+          //alert(response.posts[0].title);
+          for(var i = 0; i < response.experiments.length; i++) {
+            $('ul#experiments-container').append(
+              '<li>' + response.experiments[i].title + '</li>'
+            );
+          }
+          $('ul#experiments-container').fadeIn();
+        }
+      });
+    });
+  });
+
+</script>
+
+
+<br><br><br>
+
+
+<div id="experiments">
+  <ul id="experiments-container">
+    
+  </ul>
+</div>
+
 </body>
 </html>
 
