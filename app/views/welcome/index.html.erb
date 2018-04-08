@@ -2,8 +2,9 @@
 <html>
 <head>
   <title></title>
-  <meta charset="utf-8">
+       <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <style type="text/css">
 
@@ -152,7 +153,7 @@ input[type="search"] {
   <% if user_signed_in? %>
   <section class="main">  
  <div class="cover">
-    <%= form_tag search_path, method: :get, class: "flex-form" do %>
+    <%= form_tag root_path, method: :get, class: "flex-form" do %>
     <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
     <%= submit_tag 'submit' %>
     <% end %>
@@ -172,7 +173,33 @@ input[type="search"] {
     <h2>To continue please login or create a new account</h2>   
 <% end %>
           
-</section>  
+</section> 
+
+<script>
+
+  $(document).ready(function() {
+    $('#title').on('keyup', function() {
+      $('ul#posts-container').hide();
+      $('ul#posts-container').html('');
+      $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/",
+        data: "query=" + $('#title').val(),
+        success: function(response) {
+          //alert(response.posts[0].title);
+          for(var i = 0; i < response.posts.length; i++) {
+            $('ul#posts-container').append(
+              '<li>' + response.posts[i].title + '</li>'
+            );
+          }
+          $('ul#posts-container').fadeIn();
+        }
+      });
+    });
+  });
+
+</script> 
 </body>
 </html>
 
