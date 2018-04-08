@@ -18,7 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'acts_as_votable', '~> 0.11.1'
-gem 'bcrypt'
+gem 'activeadmin', '~> 1.2', '>= 1.2.1'
+gem 'active_admin_editor', '~> 1.1'
 
 group :development do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
