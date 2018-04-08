@@ -188,9 +188,9 @@ input[type="search"] {
         data: "query=" + $('#title').val(),
         success: function(response) {
           //alert(response.posts[0].title);
-          for(var i = 0; i < response.posts.length; i++) {
+          for(var i = 0; i < response.experiments.length; i++) {
             $('ul#posts-container').append(
-              '<li>' + response.posts[i].title + '</li>'
+              '<li>' + response.experiments[i].title + '</li>'
             );
           }
           $('ul#posts-container').fadeIn();
