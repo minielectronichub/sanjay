@@ -155,8 +155,8 @@ input[type="search"] {
 
 
 
-<%= form_tag(root_path, method: :get) do %>
-  <%= text_field_tag :title %>
+<%= form_tag(root_path, method: :get, class: "flex-form") do %>
+  <%= text_field_tag :title, nil, placeholder: 'search experiment' %>
 <% end %>
 
 
@@ -189,21 +189,12 @@ input[type="search"] {
 
 
 <br><br><br>
-
-
 <div id="experiments">
   <ul id="experiments-container">
-    
+    <%= link_to experiment.title, experiments_path %>
   </ul>
 </div>
 
-
-
-
-
-
- 
-  
   
   <% if user_signed_in? %>
   <section class="main">  
