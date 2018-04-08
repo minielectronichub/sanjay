@@ -150,12 +150,6 @@ input[type="search"] {
 <body>
  
 
-
-<%= form_tag(root_path, method: :get) do %>
-  <%= text_field_tag :title %>
-<% end %>
-
-
   
   <% if user_signed_in? %>
   <section class="main">  
@@ -183,39 +177,6 @@ input[type="search"] {
 </section> 
 
 
-<script>
-
-  $(document).ready(function() {
-    $('#title').on('keyup', function() {
-      $('ul#posts-container').hide();
-      $('ul#posts-container').html('');
-      $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/",
-        data: "query=" + $('#title').val(),
-        success: function(response) {
-          //alert(response.posts[0].title);
-          for(var i = 0; i < response.experiments.length; i++) {
-            $('ul#posts-container').append(
-              '<li>' + response.experiments[i].title + '</li>'
-            );
-          }
-          $('ul#posts-container').fadeIn();
-        }
-      });
-    });
-  });
-
-</script> 
-
-<br><br><br>
-
-<div id="posts">
-  <ul id="posts-container">
-    
-  </ul>
-</div>
 
 </body>
 </html>
