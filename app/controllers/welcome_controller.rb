@@ -10,5 +10,6 @@ class WelcomeController < ApplicationController
       @response = {status: "SUCCESS", experiments: @experiments}
       format.json {render json: @response}
   end
+end
 
 end
