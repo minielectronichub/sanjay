@@ -149,7 +149,7 @@ input[type="search"] {
 </style>
 <body>
  
-
+  
   
   <% if user_signed_in? %>
   <section class="main">  
@@ -172,6 +172,10 @@ input[type="search"] {
         </div>
   <% else %>     
     <h2>To continue please login or create a new account</h2>   
+
+        <%= form_tag(root_path, method: :get) do %>
+        <%= text_field_tag :title %>
+        <% end %>
 <% end %>
           
 </section> 
