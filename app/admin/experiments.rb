@@ -7,6 +7,7 @@ permit_params :title, :description, :components, :youtube_link, :lab_id, :sem_id
 
 
 member_action :publish, method: :put do 
+
 action_item :publish, only: :show do 
     link_to "Publish", publish_admin_experiment_path(experiment), method: :put if !experiment.published_at? 
 end
@@ -23,7 +24,6 @@ member_action :unpublish, method: :put do
     experiment.update(published_at: nil)
     redirect_to admin_experiment_path(experiment)
 end 
-
 end 
 
 
