@@ -2,8 +2,7 @@ Rails.application.routes.draw do
  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  member do 
-    put :publish 
+  member_action :publish, method: :put do 
   end 
   devise_for :users
   resources :experiments
