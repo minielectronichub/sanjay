@@ -153,7 +153,7 @@ input[type="search"] {
   <% if user_signed_in? %>
   <section class="main">  
  <div class="cover">
-    <%= form_tag root_path, method: :get, class: "flex-form" do %>
+    <%= form_tag search_path, method: :get, class: "flex-form" do %>
     <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
     <%= submit_tag 'submit' %>
     <% end %>
