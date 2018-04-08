@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
       @experiments = Experiment.where("title LIKE ?" , "%#{@search_query}%")
       # @posts = Post.where(title: @search_query)
       respond_to do |format|
-        @response = {status: "SUCCESS", experiments: @posts}
+        @response = {status: "SUCCESS", experiments: @experiments}
         format.json {render json: @response}
   end
 
