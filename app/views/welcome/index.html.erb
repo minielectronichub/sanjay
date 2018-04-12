@@ -170,7 +170,7 @@ input[type="search"] {
              <%= 'active' if params[:lab] == lab.title %>
              
                <select name="cars">
-          <option value="vol"><li><%= link_to lab.title, experiments_path(lab: lab.title) %></li> </option>
+          <option value="<%= link_to lab.title, experiments_path(lab: lab.title) %>"><%= link_to lab.title, experiments_path(lab: lab.title) %> </option>
               </select>
             <% end %>
           </ul>
