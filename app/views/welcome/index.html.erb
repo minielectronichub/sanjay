@@ -166,10 +166,13 @@ input[type="search"] {
      
        <div class="form-labels-on-top">
         <h1> select labs </h1>
-         <% Lab.all.each do |lab| %>
+        <select>
+
+         <option value=""><% Lab.all.each do |lab| %>
              <%= 'active' if params[:lab] == lab.title %>
-             <%= collection_select link_to lab.title, experiments_path(lab: lab.title) %>
-            <% end %>
+             <%= link_to lab.title, experiments_path(lab: lab.title) %>
+            <% end %></option>
+        </select> 
           </ul>
         </div>
   <% else %>     
