@@ -153,50 +153,6 @@ input[type="search"] {
 
 
 
-
-
-
-
-<%= form_tag(root_path, method: :get, class: "flex-form") do %>
-  <%= text_field_tag :title, nil, placeholder: 'search experiment' %>
-<% end %>
-
-
-
-<script>
-
-  $(document).ready(function() {
-    $('#title').on('keyup', function() {
-      $('ul#experiments-container').hide();
-      $('ul#experiments-container').html('');
-      $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/",
-        data: "query=" + $('#title').val(),
-        success: function(response) {
-          //alert(response.posts[0].title);
-          for(var i = 0; i < response.experiments.length; i++) {
-            $('ul#experiments-container').append(
-              '<li>' + response.experiments[i].title + '</li>'
-            );
-          }
-          $('ul#experiments-container').fadeIn();
-        }
-      });
-    });
-  });
-
-</script>
-
-
-<br><br><br>
-<div id="experiments">
-  <ul id="experiments-container">
-
-  </ul>
-</div>
-
   
   <% if user_signed_in? %>
   <section class="main">  
@@ -212,8 +168,10 @@ input[type="search"] {
         <h1> select labs </h1>
          <% Lab.all.each do |lab| %>
              <%= 'active' if params[:lab] == lab.title %>
-            
-             <li><%= link_to lab.title, experiments_path(lab: lab.title) %></li> 
+             
+               <select name="cars">
+          <option value="vol"><li><%= link_to lab.title, experiments_path(lab: lab.title) %></li> </option>
+              </select>
             <% end %>
           </ul>
         </div>
