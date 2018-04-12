@@ -211,22 +211,15 @@ input[type="search"] {
        <div class="form-labels-on-top">
        <h1> select labs </h1>
        <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn">Select your lab</button>
         <% Lab.all.each do |lab| %>
             <div class="dropdown-content">
-             <a href=""><%= options_for_select(link_to lab.title, experiments_path(lab: lab.title)) %></a>
+             <a href="" class="<%= 'active' if params[:lab] == lab.title %>"><%= options_for_select(link_to lab.title, experiments_path(lab: lab.title)) %></a>
          <% end %>    
            </div>
        </div>
+     </div>
  
-
-         <% Lab.all.each do |lab| %>
-             <%= 'active' if params[:lab] == lab.title %>
-             <%= options_for_select(link_to lab.title, experiments_path(lab: lab.title)) %>
-         <% end %>
-         
-          </ul>
-        </div>
   <% else %>     
     <h2>To continue please login or create a new account</h2>   
 
