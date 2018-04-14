@@ -195,39 +195,19 @@ p {
 
 
       
-  <header>
 
-    <a href="#" id="logo"></a>
 
-    <nav>
-
-      <a href="#" id="menu-icon"></a>
-
-      <ul>
-
-        <li><a href="#" class="current">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-
-      </ul>
-
-    </nav>
-
-  </header>
-
-<!--
       <header class="site-header">
         <div class="container">
-          <a href="index.html" class="logo"><img src="assets/1.png" alt="Perfect Lab"></a>
+        <!--  <a href="index.html" class="logo"><img src="assets/1.png" alt="Perfect Lab"></a> -->
+         <a> <%= link_to "", root_path, id: "logo" %></a>
           
           <!-- Default snippet for navigation -->
-   <!--       <div class="main-navigation">
-            <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+          <div class="main-navigation">
+               <a href="#" id="menu-icon"></a>
             <ul class="menu">
-              <li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-              <li class="menu-item"><a href="about.html">About</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
 
               <li class="menu-item"><a href="contact.html">Contact</a></li>
               <% if user_signed_in? %>
@@ -239,11 +219,9 @@ p {
                <li><%= link_to "Register", new_user_registration_path %></li>
               <% end %>
 
-              <li class="menu-item"><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul> <!-- .menu -->
           </div> <!-- .main-navigation -->
-          
-          <div class="mobile-navigation"></div>
         </div> <!-- .container -->
       </header> <!-- .site-header --> 
 
