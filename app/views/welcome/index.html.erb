@@ -25,6 +25,40 @@
 
   <body>
     
+
+
+
+
+
+  
+  
+  <% if user_signed_in? %>
+  <section class="main">  
+   <div class="cover">
+    <%= form_tag search_path, method: :get, class: "flex-form" do %>
+    <%= text_field_tag :title, nil, placeholder: 'Search experiment' %>
+    <%= submit_tag 'submit' %>
+    <% end %>
+  </div> 
+
+     
+       <div class="drop">
+       <h1> select labs </h1>
+       <div class="dropdown">
+        <button class="dropbtn">Select your lab</button>
+        <% Lab.all.each do |lab| %>
+            <div class="dropdown-content">
+             <a href="" class="<%= 'active' if params[:lab] == lab.title %>"><%= options_for_select(link_to lab.title, experiments_path(lab: lab.title)) %></a>
+         <% end %>    
+           </div>
+       </div>
+     </div>
+ 
+  <% else %>    
+
+    
+
+
     <div class="site-content">
 
       <main class="main-content">
@@ -66,7 +100,7 @@
         </div>
 
       </main> <!-- .main-content -->
-
+<% end %>
       <footer class="site-footer">
         <div class="container">
           <div class="row">
