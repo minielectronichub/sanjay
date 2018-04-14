@@ -3,12 +3,12 @@
  */
 
 .site-header{
-	
+	@include clearfix;
 	padding: 20px 0 0;
 	line-height: normal;
 
 	.container{
-		
+	  @include clearfix;
 	}
 }
 .logo{
