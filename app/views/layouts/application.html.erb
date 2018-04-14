@@ -71,7 +71,7 @@ header {
   float: left;
   width: 200px;
   height: 40px;
-  background: url(assets/logo.png) no-repeat center;
+  background: url(assets/1.png) no-repeat center;
   display: block;
 
 }
@@ -192,38 +192,32 @@ p {
 
   </style>
   <body>
+       <header>
 
+      <a> <%= link_to "", root_path, id: "logo" %></a>
 
-      
+      <nav>
 
+      <a href="#" id="menu-icon"></a>
 
-      <header class="site-header">
-        <div class="container">
-        <!--  <a href="index.html" class="logo"><img src="assets/1.png" alt="Perfect Lab"></a> -->
-         <a> <%= link_to "", root_path, id: "logo" %></a>
-          
-          <!-- Default snippet for navigation -->
-          <div class="main-navigation">
-               <a href="#" id="menu-icon"></a>
-            <ul class="menu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+      <ul>
 
-              <li class="menu-item"><a href="contact.html">Contact</a></li>
-              <% if user_signed_in? %>
-              <li> <%= link_to "Create experiment", new_experiment_path, class: "contact" %></li>
+        <li><a href="#" class="current">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+         <% if user_signed_in? %>
+              <li> <%= link_to "Create experiment", new_experiment_path %></li>
                <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 
                <% else %>
                <li><%= link_to "Log In", new_user_session_path %></li>
                <li><%= link_to "Register", new_user_registration_path %></li>
-              <% end %>
+         <% end %>
 
-              <li><a href="contact.html">Contact</a></li>
-            </ul> <!-- .menu -->
-          </div> <!-- .main-navigation -->
-        </div> <!-- .container -->
-      </header> <!-- .site-header --> 
+      </nav>
+    </header>
+
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
