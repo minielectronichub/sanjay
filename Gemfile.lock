@@ -24,10 +24,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_editor (1.1.0)
-      activeadmin (>= 0.4.0)
-      ejs
-      rails (>= 3.0.0)
     activeadmin (1.2.1)
       arbre (>= 1.1.1)
       coffee-rails
@@ -83,11 +79,12 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    ejs (1.1.1)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
     ffi (1.9.23-x86-mingw32)
+    font-awesome-sass (5.0.9)
+      sass (>= 3.2)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -240,13 +237,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  active_admin_editor (~> 1.1)
   activeadmin (~> 1.2, >= 1.2.1)
   acts_as_votable (~> 0.11.1)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.3)
+  font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   pg
