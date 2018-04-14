@@ -15,26 +15,49 @@
 
   <body>
 
-  <header>
-    <%= link_to "PVPSIT", root_path, class: "logo" %>
-    <nav>
-      <ul>
-     
-        <% if user_signed_in? %>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 
-        <% else %>  
-          <li><%= link_to "Log In", new_user_session_path %></li>
-           <li><%= link_to "Register", new_user_registration_path %></li>
-        <% end %>
-      </ul>
-        
-      <% if user_signed_in? %>
-       <li> <%= link_to "Create experiment", new_experiment_path, class: "contact" %></li>
-      <% end %>        
-    </nav>
-  </header>
-   
+
+  <div class="site-content">
+
+      <header class="site-header">
+        <div class="container">
+          <a href="index.html" class="logo"><img src="images/1.png" alt="Perfect Lab"></a>
+          
+          <!-- Default snippet for navigation -->
+          <div class="main-navigation">
+            <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+            <ul class="menu">
+              <li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
+              <li class="menu-item"><a href="about.html">About</a></li>
+
+              <li class="menu-item"><a href="contact.html">Contact</a></li>
+              <% if user_signed_in? %>
+              <li> <%= link_to "Create experiment", new_experiment_path, class: "contact" %></li>
+               <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+               <% else %>
+               <li><%= link_to "Log In", new_user_session_path %></li>
+               <li><%= link_to "Register", new_user_registration_path %></li>
+              <% end %>
+
+              <li class="menu-item"><a href="contact.html">Contact</a></li>
+            </ul> <!-- .menu -->
+          </div> <!-- .main-navigation -->
+          
+          <div class="mobile-navigation"></div>
+        </div> <!-- .container -->
+      </header> <!-- .site-header -->
+
+
+
+
+
+
+
+
+
+
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
