@@ -319,7 +319,10 @@ input[type="search"] {
               <span>To continue</span> <br>
               <span>please login or create a new account</span>
             </div>
-            <a href="#" class="button">Create your account</a>
+           
+               <a><%= link_to "Log In", new_user_session_path, class: "button" %></a>
+               <a><%= link_to "Register", new_user_registration_path class: "button" %></a>
+
           </div>
         </div> <!-- .hero -->
 
