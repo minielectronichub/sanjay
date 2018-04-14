@@ -6,8 +6,7 @@
      <meta name="keywords" content="HTML,CSS,Rails,Arduino projects">
      <meta name="author" content="sanjay pinnaka">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-   
+  
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -66,6 +65,7 @@
 
     
     <%= yield %>
-      
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'jquery-1.11.1.min', 'data-turbolinks-track' => true %>   
   </body>
 </html>
