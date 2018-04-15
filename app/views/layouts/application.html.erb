@@ -212,7 +212,7 @@ p {
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <% if user_signed_in? %>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+          <%= link_to('signout', destroy_user_session_path, method: :delete) %> 
           <li> <%= link_to "Create experiment", new_experiment_path %></li>
         <% else %>  
           <li><%= link_to "Log In", new_user_session_path %></li>
@@ -226,9 +226,9 @@ p {
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
-
+  
     
     <%= yield %>
- 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
