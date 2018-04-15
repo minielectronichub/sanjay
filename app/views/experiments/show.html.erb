@@ -1,48 +1,93 @@
 <!DOCTYPE html>
-<html>
-<head>
-	 <meta charset="UTF-8">
-     <meta name="description" content="about me">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-</head>
-<style type="text/css">
-	.videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-	margin: 0 auto;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	
-}
-@media (max-width: 600px)  {
-.videoWrapper iframe  {
-	width: 100%;
-	height: 100%;
-}	
-}
-</style>
-</head>
-<body>
-<h1><%= @experiment.title .html_safe %></h1>
-<p><%= @experiment.description .html_safe %></p>
-<p><%= @experiment.components %></p>
-<p><%= @experiment.lab.title %></p>
-<div class="videoWrapper">
-<iframe width="853" height="480" src='https://www.youtube.com/embed/<%= @experiment.youtube_link .html_safe %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-</div>
-<%= link_to "Back", root_path %>
-<% if user_signed_in? %>
-<% if @experiment.user_id == current_user.id %>
-<%= link_to "Edit", edit_experiment_path(@experiment) %>
-<%= link_to "Delete", experiment_path(@experiment), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-<% end %>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title><%= @experiment.title .html_safe %></title>
 
-</body>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		
+		<div class="site-content">
+
+		
+
+			<main class="main-content">
+				<div class="page-head">
+					<div class="container">
+						
+						<h1 class="page-title"><%= @experiment.title .html_safe %></h1>
+					</div>
+				</div>
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-sm-6">
+							<h2>Theory</h2>
+							<p><%= @experiment.description .html_safe %></p>
+							<p><%= @experiment.lab.title %></p>
+						</div>
+						<div class="col-sm-6">
+							<h2>components used</h2>
+							<p><%= @experiment.components %></p>
+						</div>
+					</div>
+				</div>
+
+				 
+				
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-sm-6">
+							<p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+							
+							<p>Nemo enim ipsam voluptatem quia voluptas aspernatur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+
+							
+							<a><%= link_to "Back", root_path, class: "button" %></a>
+							<% if user_signed_in? %>
+                            <% if @experiment.user_id == current_user.id %>
+                            <%= link_to "Edit", edit_experiment_path(@experiment) %>
+                            <%= link_to "Delete", experiment_path(@experiment), method: :delete, data: { confirm: "Are you sure?" } %>
+                            <% end %>
+                           <% end %>
+						</div>
+						  <div class="col-sm-6">
+			
+							<iframe class="macbook" src='https://www.youtube.com/embed/<%= @experiment.youtube_link .html_safe %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+
+			
+			</main> <!-- .main-content -->
+
+	
+		</div> <!-- .main-content -->
+		
+
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+
 </html>
