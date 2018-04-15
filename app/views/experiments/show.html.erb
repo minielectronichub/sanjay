@@ -35,25 +35,13 @@
 						<h1 class="page-title"><%= @experiment.title .html_safe %></h1>
 					</div>
 				</div>
+                
 
-				<div class="fullwidth-block">
-					<div class="container">
-						<div class="col-sm-6">
-							<h2>Theory</h2>
-							<p><%= @experiment.description .html_safe %></p>
-							<p><%= @experiment.lab.title %></p>
-						</div>
-						<div class="col-sm-6">
-							<h2>components used</h2>
-							<p><%= @experiment.components %></p>
-						</div>
-					</div>
-				</div>
 
-				 
-				
 
-				<div class="fullwidth-block">
+
+
+                <div class="fullwidth-block">
 					<div class="container">
 						<div class="col-sm-6">
 							<p>Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
@@ -71,10 +59,36 @@
 						</div>
 						  <div class="col-sm-6">
 			
-							<iframe class="macbook" src='https://www.youtube.com/embed/<%= @experiment.youtube_link .html_safe %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+							<iframe width="500" height="480" class="macbook" src='https://www.youtube.com/embed/<%= @experiment.youtube_link .html_safe %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
+
+
+
+
+
+
+
+
+
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-sm-6">
+							<h2>Theory</h2>
+							<p><%= @experiment.description .html_safe %></p>
+							<p><%= @experiment.lab.title %></p>
+						</div>
+						<div class="col-sm-6">
+							<h2>components used</h2>
+							<p><%= @experiment.components %></p>
+						</div>
+					</div>
+				</div>
+
+				 
+				
 
 			
 			</main> <!-- .main-content -->
