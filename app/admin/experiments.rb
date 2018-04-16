@@ -12,7 +12,7 @@ action_item :publish, only: :show do
     link_to "Publish", publish_admin_experiment_path(experiment), method: :put if !experiment.published? 
 end
 action_item :publish, only: :show do 
-    link_to "UnPublish", unpublish_admin_experiment_path(experiment), method: :put if !experiment.published? 
+    link_to "UnPublish", unpublish_admin_experiment_path(experiment), method: :put if experiment.published? 
 end
 member_action :publish, method: :put do 
     experiment = Experiment.find(params[:id])
