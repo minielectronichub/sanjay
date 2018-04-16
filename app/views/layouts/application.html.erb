@@ -9,7 +9,7 @@
   
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <%= stylesheet_link_tag    'fonts/font-awesome.min', media: 'all', 'data-turbolinks-track': 'reload' %>
     <title>Labs</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -114,7 +114,7 @@ p {
   line-height: 1.45em;
   margin-bottom: 20px;
 }
-/*MEDIA QUERY*/
+
 @media only screen and (max-width : 640px) {
   header {
     position: absolute;
