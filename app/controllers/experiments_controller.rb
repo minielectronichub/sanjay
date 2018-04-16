@@ -24,6 +24,7 @@ class ExperimentsController < ApplicationController
   end
 
 	def new 
+
     @experiment = current_user.experiments.build
     @labs = Lab.all.map{ |c| [c.title, c.id] }
     @sems = Sem.all.map{ |c| [c.name, c.id] }
@@ -71,7 +72,7 @@ class ExperimentsController < ApplicationController
 	
 	private 
 	def experiment_params
-		params.require(:experiment).permit(:title, :description, :components, :youtube_link, :lab_id, :sem_id, :collage_id, :branch_id)		
+		params.require(:experiment).permit(:title, :description, :components, :youtube_link, :lab_id, :sem_id, :collage_id, :branch_id, :published)		
 	end
 	def find_experiment
 	 @experiment = Experiment.find(params[:id])
