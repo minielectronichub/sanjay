@@ -3,7 +3,7 @@ ActiveAdmin.register Experiment do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
-permit_params :title, :description, :components, :youtube_link, :lab_id, :sem_id, :collage_id, :branch_id, :published
+permit_params :title, :description, :components, :youtube_link, :lab_id, :sem_id, :collage_id, :branch_id
 
 
 
