@@ -10,7 +10,7 @@
     <title>Labs</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    '', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
  
     
   </head>
@@ -28,6 +28,13 @@
 
 
 
+  
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> 
+  
+    
+    <%= yield %>
    <header>
       <a> <%= link_to "", root_path, id: "logo" %></a>
       <nav>
@@ -47,13 +54,6 @@
       </nav>
     </header>
 
-
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
-  
-    
-    <%= yield %>
 
 
        <footer class="site-footer">
