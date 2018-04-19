@@ -26,16 +26,7 @@
   </style>
   <body>
 
-
-
   
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
-  
-    
-    <%= yield %>
-   <header>
       <a> <%= link_to "", root_path, id: "logo" %></a>
       <nav>
       <a id="menu-icon"></a>
@@ -52,8 +43,16 @@
         <% end %>
       </ul>
       </nav>
-    </header>
+    
 
+
+  
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> 
+  
+    
+    <%= yield %>
 
 
        <footer class="site-footer">
