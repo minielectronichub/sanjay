@@ -3,7 +3,8 @@
 @import "style";
 /*
 
-
+ *= require main
+ *= require_self
  *= require
  *= require trix 
 
