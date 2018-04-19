@@ -98,8 +98,16 @@
 
 
 
-<div id="disqus_thread"></div>
-<script>
+                       <div id="disqus_thread"></div>
+
+
+
+
+
+
+		</div> <!-- .main-content -->
+		
+        <script>
 
 
 var disqus_config = function () {
@@ -109,7 +117,7 @@ this.page.identifier = '<%= @experiment.id %>';
 
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
-s.src = 'https://saipinnaka-herokuapp.disqus.com/embed.js';
+s.src = 'https://saipinnaka-herokuapp.com.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
@@ -119,14 +127,6 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 
-
-
-
-
-
-
-		</div> <!-- .main-content -->
-		
 
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
