@@ -94,24 +94,37 @@
 			
 			</main> <!-- .main-content -->
 
-		    <div id="disqus_thread"></div>
-             <script>
 
-            var disqus_config = function () {
-            this.page.url = '<%= url_for(@experiments) %>';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = '<%= @experiment.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-              };
 
-             (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = 'https://https-saipinnaka-herokuapp-com.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-             </script>
-             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>	 
-				
-          
+
+
+<div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "<%= url_for(host: ENV['APPLICATION_HOST']) %>";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'article-<%= @article.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://saipinnaka-herokuapp.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+
+
+
+
+
+
+
 		</div> <!-- .main-content -->
 		
 
