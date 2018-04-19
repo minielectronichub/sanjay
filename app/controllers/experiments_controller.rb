@@ -17,6 +17,7 @@ class ExperimentsController < ApplicationController
      # @experiments = Experiment.where(title: params[:title])
      @experiments = Experiment.where("title LIKE ?", "%#{params[:title]}%")
      render "index"
+     
   end
 
   def show 
