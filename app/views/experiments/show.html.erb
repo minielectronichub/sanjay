@@ -104,7 +104,7 @@
 
 var disqus_config = function () {
 this.page.url = "<%= url_for(host: ENV['APPLICATION_HOST']) %>";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 'article-<%= @article.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = 'experiment-<%= @experiment.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
