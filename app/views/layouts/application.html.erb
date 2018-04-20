@@ -12,12 +12,12 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
-    </head>
+ 
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    
+  </head>
   <style type="text/css">
     
-
-
-
  .current-lab {
   margin-top: 150px;
  }
@@ -107,7 +107,6 @@ p {
   line-height: 1.45em;
   margin-bottom: 20px;
 }
-
 @media only screen and (max-width : 640px) {
   header {
     position: absolute;
@@ -141,9 +140,7 @@ p {
 .container {
   margin-top: 85px;
 }
-
  .current-lab {
-
   margin-top: 150px;
  }
  .site-footer {
@@ -152,22 +149,14 @@ p {
 .dropdown-content {
   min-width: 170px !important;
 }
-
 .notice {
   margin-bottom: 0px !important;
   text-align: center;
 }
-
-
-
-
-
-
   </style>
   <body>
-
    <header>
-     <a> <%= link_to "", root_path, id: "logo" %></a>
+      <a> <%= link_to "", root_path, id: "logo" %></a>
       <nav>
       <a id="menu-icon"></a>
       <ul>
@@ -184,16 +173,11 @@ p {
       </ul>
       </nav>
     </header>
-
-
-  
-
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
   
     
     <%= yield %>
-   
        <footer class="site-footer">
         <div class="container">
           <div class="row">
@@ -239,30 +223,13 @@ p {
                   <a href="#"><i class="fab fa-google-plus-g"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
                   <a href="#"><i class="fab fa-github"></i></a>
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </footer>
-
-
- 
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ad849f25f7cdf4f05330b39/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
 </body>
 </html>
