@@ -8,12 +8,12 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Labs</title>
-    <%= csrf_meta_tags %>
+   <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
  
-    
-  </head>
+    </head>
   <style type="text/css">
     
 
@@ -194,7 +194,7 @@ p {
   
     
     <%= yield %>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
        <footer class="site-footer">
         <div class="container">

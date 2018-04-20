@@ -52,12 +52,7 @@ class ExperimentsController < ApplicationController
        render 'new' 
       end
 	end	
-    
-    def approve
-     if can? :approve, Experiment
-    @experiment.update_attributes approved: true
-    end
-    end
+ 
 
 
 	def edit
