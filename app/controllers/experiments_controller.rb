@@ -3,14 +3,19 @@ class ExperimentsController < ApplicationController
   before_action :find_experiment, only: [:show, :edit, :update, :destroy]
 
  	def index
- 	
-    if params[:lab].blank?
-        @experiments = Experiment.all.order("created_at DESC")
-     else
-	  @lab_id = Lab.find_by(title: params[:lab]).id
-	  @experiments = Experiment.where(:lab_id => @lab_id).order("created_at DESC")
-	 end
-	end
+ 	@experiments = Experiment.where(approved: true)
+   # if params[:lab].blank?
+   #     @experiments = Experiment.all.order("created_at DESC")
+   #  else
+#	  @lab_id = Lab.find_by(title: params[:lab]).id
+#	  @experiments = Experiment.where(:lab_id => @lab_id).order("created_at DESC")
+#	 end
+#	end
+ 
+    def approve_list
+      @experiments = Experiment.where("approved = ? AND state_id= ?", false, params[:state_id]) 
+    end
+
 
   def search    
 
@@ -46,6 +51,13 @@ class ExperimentsController < ApplicationController
        render 'new' 
       end
 	end	
+    
+    def approve
+     if can? :approve, Experiment
+    @experiment.update_attributes approved: true
+    end
+    end
+
 
 	def edit
 	 @labs = Lab.all.map{ |c| [c.title, c.id] }
@@ -65,7 +77,7 @@ class ExperimentsController < ApplicationController
 			render 'edit'
 		end
 	end
- 
+    
 
 	def destroy
 		@experiment.destroy
