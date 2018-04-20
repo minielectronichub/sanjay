@@ -15,9 +15,9 @@ class ExperimentsController < ApplicationController
   def search    
 
      # @experiments = Experiment.where(title: params[:title])
-   @experiments = Experiment.where(published: true)
-    # @experiments = Experiment.where("title LIKE ?", "%#{params[:title]}%")
-     render "index"
+     #@experiments = Experiment.where(published: true)
+      @experiments = Experiment.where("title LIKE ?", "%#{params[:title]}%", published: true)
+      render "index"
      
   end
 
