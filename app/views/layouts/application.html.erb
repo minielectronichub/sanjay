@@ -1,18 +1,13 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-     <meta charset="UTF-8">
-     <meta name="description" content="about me">
-     <meta name="keywords" content="HTML,CSS,Rails,Arduino projects">
-     <meta name="author" content="sanjay pinnaka">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Labs</title>
+    <title>AjaxSearch</title>
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
-    </head>
+  </head>
+
   <style type="text/css">
     
 
@@ -159,12 +154,9 @@ p {
 }
 
 
-
-
-
-
   </style>
   <body>
+
 
    <header>
      <a> <%= link_to "", root_path, id: "logo" %></a>
@@ -186,15 +178,13 @@ p {
     </header>
 
 
-  
-
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> 
   
-    
     <%= yield %>
-   
-       <footer class="site-footer">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <footer class="site-footer">
         <div class="container">
           <div class="row">
             <div class="col-xs-6 col-md-3">
@@ -248,7 +238,6 @@ p {
       </footer>
 
 
- 
   <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -262,7 +251,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</body>
+       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
 </html>
