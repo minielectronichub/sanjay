@@ -54,18 +54,38 @@ class ExperimentsController < ApplicationController
      @collages = Collage.all.map{ |c| [c.name, c.id] }
 	end
 
-	def update
-		   @experiment.sem_id = params[:sem_id]
-	       @experiment.collage_id = params[:collage_id]
-		   @experiment.lab_id = params[:lab_id]
-		   @experiment.branch_id = params[:branch_id]
-		if @experiment.update(experiment_params)
-		   redirect_to experiment_path(@experiment)
-		else
-			render 'edit'
-		end
-	end
+	#def update
+	#	   @experiment.sem_id = params[:sem_id]
+	 #      @experiment.collage_id = params[:collage_id]
+	#	   @experiment.lab_id = params[:lab_id]
+	#	   @experiment.branch_id = params[:branch_id]
+	#	if @experiment.update(experiment_params)
+	#	   redirect_to experiment_path(@experiment)
+	#	else
+	#		render 'edit'
+	#	end
+#	end
+    
+    def update
+     @experiment = Experiment.find(params[:id])
+     authorize @experiment
+     if @experiment.update(experiment_params)
+     redirect_to @experiment
+     else
+     render :edit
+     end
+    end
 
+    def publish
+     @experiment = Experiment.find(params[:id])
+     authorize @experiment, :update?
+     @experiment.publish!
+     redirect_to @experiment
+    end
+    def admin_list
+      authorize Post # we don't have a particular post to authorize
+      # Rest of controller action
+    end
 	def destroy
 		@experiment.destroy
 		redirect_to root_path

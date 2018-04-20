@@ -81,6 +81,12 @@
                  			<a><%= link_to "Back", root_path, class: "button" %></a>
 							<% if user_signed_in? %>
                             <% if @experiment.user_id == current_user.id %>
+                          
+                            <% if policy(@post).update? %>                          
+                            <%= link_to "Edit post", edit_post_path(@post) %>
+                            <% end %>
+
+                            
                             <%= link_to "Edit", edit_experiment_path(@experiment) %>
                             <%= link_to "Delete", experiment_path(@experiment), method: :delete, data: { confirm: "Are you sure?" } %>
                             <% end %>
