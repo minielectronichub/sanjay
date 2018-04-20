@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  
+  authorize :dashboard, :show?
   before_action :find_experiment, only: [:show, :edit, :update, :destroy]
 
  	def index
