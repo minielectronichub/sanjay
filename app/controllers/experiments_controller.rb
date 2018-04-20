@@ -5,7 +5,7 @@ class ExperimentsController < ApplicationController
  	def index
  	
    if params[:lab].blank?
-   	  @experiments = Experiment.where(approved: true)
+   	  @experiments = Experiment.where(published: true)
        # @experiments = Experiment.all.order("created_at DESC")
      else
 	  @lab_id = Lab.find_by(title: params[:lab]).id
