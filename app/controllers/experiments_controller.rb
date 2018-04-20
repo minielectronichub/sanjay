@@ -3,14 +3,8 @@ class ExperimentsController < ApplicationController
   before_action :find_experiment, only: [:show, :edit, :update, :destroy]
 
  	def index
- 	
-   if params[:lab].blank?
-   	  @experiments = Experiment.where(published: true)
-       # @experiments = Experiment.all.order("created_at DESC")
-     else
-	  @lab_id = Lab.find_by(title: params[:lab]).id
-	  @experiments = Experiment.where(:lab_id => @lab_id).order("created_at DESC")
-	 end
+ 	 @experiments = Experiment.where(published: true)
+ 
 	end
  
     def approve_list
@@ -27,7 +21,7 @@ class ExperimentsController < ApplicationController
   end
 
   def show 
- 
+     @experiments = Experiment.where(published: true)
   end
 
 	def new 
