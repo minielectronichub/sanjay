@@ -52,7 +52,8 @@ nav ul li a:hover {
   float: left;
   width: 270px;
   height: 40px;
-  background: url("/3.png") no-repeat center;
+  
+  background-image: image-url('3.png');
   display: block;
 }
 
