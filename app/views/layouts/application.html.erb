@@ -16,48 +16,37 @@
 
   <style type="text/css">
     
-
-
-
- .current-lab {
-  margin-top: 150px;
- }
- .site-footer {
-  margin-top: 50px;
- }
-.dropdown-content {
-  min-width: 170px !important;
+   * {
+  box-sizing: border-box;
 }
-/*MAIN*/
-.notice {
-  margin-bottom: 0px !important;
-  text-align: center;
+nav {
+  padding: 30px;
 }
-body { 
-  font-size: 1.05em;
-  line-height: 1.25em;
-  font-family: Helvetica Neue, Helvetica, Arial;
-  background: #f9f9f9;
-  color: #555;
+nav ul {
+  float: right;
 }
-a {
-  color: #ed5151;
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+nav ul li:not(:first-child) {
+  margin-left: 25px;
+}
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: #1f2227;
+  font-size: 16px;
   text-decoration: none;
-  font-weight: bold;
+  letter-spacing: 0.04em;
 }
-a:hover {
-  color: #444;
+nav ul li a:hover {
+  color: #808080;
+  text-decoration: none;
 }
-header {
-  background: #fff;
-  width: 100%;
-  height: 76px;
-  position: ;
-  top: 0;
-  left: 0;
-  
-  z-index: 100;
-}
+
+
+
 #logo{
   margin: 20px;
   float: left;
@@ -66,111 +55,127 @@ header {
   background: url(assets/2.png) no-repeat center;
   display: block;
 }
-nav {
-  float: right;
-  padding: 20px;  
-  
-}
-#menu-icon {
-  display: hidden;
-  width: 35px;
-  height: 35px;
-  background: #ed5151 url(assets/i.png) center;
-}
-a:hover#menu-icon {
-  background-color: #444;
-  border-radius: 4px 4px 0 0;
-}
-ul {
-  list-style: none;
-}
-li {
-  display: inline-block;
-  float: left;
-  padding: 10px
-}
-.current {
-  color: #2262AD;
-}
-section {
-  margin: 80px auto 40px;
-  max-width: 980px;
-  position: relative;
-  padding: 20px
-}
-h1 {
-  font-size: 2em;
-  color: #2262AD;
-  line-height: 1.15em;
-  margin: 20px 0 ;
-}
-p {
-  line-height: 1.45em;
-  margin-bottom: 20px;
-}
 
-@media only screen and (max-width : 640px) {
-  header {
-    position: absolute;
-  }
-   #logo{
-  width: 215px;
-  margin-left: 0px;
-  }
-  #menu-icon {
-    display:inline-block;
-  }
-  nav ul, nav:active ul { 
-    display: none;
-    position: absolute;
-    padding: 20px;
-    background: #fff;
-    border: 5px solid #444;
-    right: 20px;
-    top: 60px;
-    width: 50%;
-    border-radius: 4px 0 4px 4px;
-  }
-  nav li {
-    text-align: center;
+
+@media screen and (max-width: 560px) {
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    padding: 10px 0;
-    margin: 0;
+    z-index: -1;
+    background: #1f2227;
+    opacity: 0;
+    transition: all 0.2s ease;
   }
-  nav:hover ul {
+  .nav-container ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  .nav-container ul li {
     display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
   }
-.container {
-  margin-top: 85px;
+  .nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+  .nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+  .nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+  .nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+  .nav-container ul li:not(:first-child) {
+    margin-left: 0;
+  }
+  .nav-container ul li a {
+    padding: 10px 25px;
+    opacity: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+  .nav-open {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+  .nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1f2227;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+  .nav-open i:nth-child(1) {
+    margin-top: 16px;
+  }
+  .nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+  .nav-open i:nth-child(3) {
+    margin-top: 4px;
+  }
+}
+#nav:checked + .nav-open {
+  transform: rotate(45deg);
+}
+#nav:checked + .nav-open i {
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+#nav:checked + .nav-open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+#nav:checked + .nav-open i:nth-child(2) {
+  opacity: 0;
+}
+#nav:checked + .nav-open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+#nav:checked ~ .nav-container {
+  z-index: 9990;
+  opacity: 1;
+}
+#nav:checked ~ .nav-container ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hidden {
+  display: none;
 }
 
- .current-lab {
-
-  margin-top: 150px;
- }
- .site-footer {
-  margin-top: 50px;
- }
-.dropdown-content {
-  min-width: 170px !important;
-}
-
-.notice {
-  margin-bottom: 0px !important;
-  text-align: center;
-}
 
 
   </style>
   <body>
 
-
-   <header>
-     <a> <%= link_to "", root_path, id: "logo" %></a>
-      <nav>
-      <a id="menu-icon"></a>
-      <ul>
-       <li><%= link_to "Home", root_path, class: "current" %></li>
+   <a> <%= link_to "", root_path, id: "logo" %></a>
+  <nav>	
+  <input type="checkbox" id="nav" class="hidden"/>
+  <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+  <div class="nav-container">
+    <ul>
+        <li><%= link_to "Home", root_path, class: "current" %></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <% if user_signed_in? %>
@@ -180,9 +185,9 @@ p {
           <li><%= link_to "Log In", new_user_session_path %></li>
            <li><%= link_to "Register", new_user_registration_path %></li>
         <% end %>
-      </ul>
-      </nav>
-    </header>
+    </ul>
+  </div>
+</nav>
 
 
   <p class="notice"><%= notice %></p>
