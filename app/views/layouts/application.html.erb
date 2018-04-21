@@ -59,6 +59,10 @@ nav ul li a:hover {
 
 
 @media screen and (max-width: 560px) {
+	   #logo{
+  width: 215px;
+  margin-left: 0px;
+  }
   .nav-container {
     position: fixed;
     top: 0;
@@ -164,15 +168,33 @@ nav ul li a:hover {
 .hidden {
   display: none;
 }
+.container {
+  margin-top: 85px;
+}
 
+ .current-lab {
+
+  margin-top: 150px;
+ }
+ .site-footer {
+  margin-top: 50px;
+ }
+.dropdown-content {
+  min-width: 170px !important;
+}
+
+.notice {
+  margin-bottom: 0px !important;
+  text-align: center;
+}
 
 
   </style>
   <body>
 
-   
+  	<a> <%= link_to "", root_path, id: "logo" %></a> 
   <nav>	
-  	<a> <%= link_to "", root_path, id: "logo" %></a>
+
   <input type="checkbox" id="nav" class="hidden"/>
   <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
   <div class="nav-container">
