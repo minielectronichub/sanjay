@@ -52,7 +52,7 @@ nav ul li a:hover {
   float: left;
   width: 270px;
   height: 40px;
-  background: url("3.png") no-repeat center;
+  background: url("assets/images/3.png") no-repeat center;
   display: block;
 }
 
@@ -1723,7 +1723,6 @@ form textarea {
 
 
 
-@import "application";
 
  .current-lab {
   margin-top: 150px;
@@ -1763,29 +1762,6 @@ header {
   left: 0;
   
   z-index: 100;
-}
-#logo{
-  margin: 20px;
-  float: left;
-  width: 340px;
-  height: 40px;
-  background: url(assets/1.png) no-repeat center;
-  display: block;
-}
-nav {
-  float: right;
-  padding: 20px;  
-  
-}
-#menu-icon {
-  display: hidden;
-  width: 35px;
-  height: 35px;
-  background: #ed5151 url(assets/menu-icon.png) center;
-}
-a:hover#menu-icon {
-  background-color: #444;
-  border-radius: 4px 4px 0 0;
 }
 ul {
   list-style: none;
